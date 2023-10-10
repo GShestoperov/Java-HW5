@@ -11,6 +11,8 @@ public class Main {
 
         phoneBook.printAllItems();
 
+        phoneBook.printPhonesByKeys(phoneBook.sort());
+
         if (phoneBook.edit("Иванов", "+7 926 1234567", "+7 926 7654321"))
             System.out.println("Телефон изменен");
         phoneBook.printAllItems();

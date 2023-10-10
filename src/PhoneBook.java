@@ -78,4 +78,25 @@ public class PhoneBook {
             return false;
         }
     }
+
+    public List<String> sort() {
+        List<String> dataByKey = new ArrayList<>(data.keySet());
+        Collections.sort(dataByKey);
+        return dataByKey;
+    }
+
+    public void printPhonesByKeys(List<String> keys) {
+        System.out.printf("%-15s %s\n", "Фамилия", "Телефон");
+        System.out.println("----------------------------------------------------------------------");
+        for (var key : keys) {
+            System.out.printf("%-15s", key);
+            for (var phone : data.get(key)) {
+                System.out.print(phone + " ");
+            }
+            System.out.println();
+        }
+        if (keys.isEmpty())
+            System.out.println("No records");
+        System.out.println("----------------------------------------------------------------------");
+    }
 }
